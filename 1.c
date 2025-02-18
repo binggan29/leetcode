@@ -1,15 +1,17 @@
 #include <stdio.h>
+
+int f[50]={0};
+
+int feibonaqi(int n)
+{
+    if(n<=1) return 1;
+    if(f[n]>0) return f[n];
+    return f[n]=(feibonaqi(n-1)+feibonaqi(n-2));
+}
 int main()
 {
-    int n,first=1,second=1;
-    scanf("%d",&n);
-   int x=1;
-   int result;
-    for(x;x<n-1;x++)
-    {
-        result=first+second;
-        first=second;
-        second=result;
-    }
-    printf("%d",result);
+    int a;
+    scanf("%d",&a);
+    printf("%d",feibonaqi(a));
+    return 0;
 }
